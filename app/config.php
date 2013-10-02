@@ -11,26 +11,17 @@
  */
 
 /**
+ * Arquivo privado
+ */
+require_once 'private.config.php';
+
+/**
  * Define o tipo do debug
  */
 Config::set('debug', array(
 	'type'	=> 'local', //pode assumir os seguintes valores: off, local, network e all
 	'query'	=> false, //pode assumir false, para desativar, ou um valor para a query ?debug=seu-valor-seguro
 	'sql'	=> true, 
-));
-
-/**
- * Tipo do drive do banco de dados, pode assumir os seguintes valores: mysql
- */
-Config::set('database', array(
-	'default' => array(
-		'type' => 'mysql',
-		'host' => 'localhost',
-		'name' => 'trilado2',
-		'user' => 'root',
-		'pass' => '',
-		'validate' => true
-	)
 ));
 
 /**
@@ -72,11 +63,6 @@ Config::set('default_lang', 'pt-br');
  * Formato padrão da data.
  */
 Config::set('date_format', 'd/m/Y');
-
-/**
- * Chave de segurança (deve ser alterada)
- */
-Config::set('salt', 'ad&&*&32343wCFlo^`]´s32Qw78=H2?Ed');
 
 /**
  * Define se as requisições via dispositivo móvel irão carregar os templates específicos, se existirem, para versão móvel
