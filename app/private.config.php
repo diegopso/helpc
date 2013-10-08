@@ -7,9 +7,9 @@ Config::set('database', array(
 	'default' => array(
 		'type' => 'mysql',
 		'host' => 'mysql2.000webhost.com',
-		'name' => '',
-		'user' => '',
-		'pass' => '',
+		'name' => 'a4533051_helpc',
+		'user' => 'a4533051_root',
+		'pass' => 'djonathasdiegosergio123',
 		'validate' => true
 	)
 ));
@@ -17,4 +17,4 @@ Config::set('database', array(
 /**
  * Chave de segurança (deve ser alterada)
  */
-Config::set('salt', '');
+Config::set('salt', 'iadsufocbgiodsybgfcsioagxiosudgh');

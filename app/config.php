@@ -27,7 +27,7 @@ Config::set('debug', array(
 /**
  * Master Page padrão
  */
-Config::set('default_master', 'template');
+Config::set('default_master', 'master');
 
 /**
  * Controller padrão
