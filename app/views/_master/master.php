@@ -3,8 +3,10 @@
 		<link href="~/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Teste</h1>
+            <div class="container">
+		<h1>HelpC</h1>
 		<?= FLASH ?>
 		<?= CONTENT ?>
+            </div>
 	</body>
 </html>
