@@ -26,7 +26,6 @@ class Usuario extends Model
 
 	/**
 	 * @Column(Type="String")
-	 * @Required()
 	 */
 	public $Nome;
 	
