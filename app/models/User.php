@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @Entity("user")
+ * @Entity("usuario")
  */
-class User extends Model
+class Usuario extends Model
 {
 
 	/**
@@ -16,12 +16,18 @@ class User extends Model
 	 * @Column(Type="String")
 	 * @Required()
 	 */
-	public $Username;
+	public $Login;
 
 	/**
 	 * @Column(Type="String")
 	 * @Required()
 	 */
-	public $Password;
+	public $Senha;
+
+	/**
+	 * @Column(Type="String")
+	 * @Required()
+	 */
+	public $Nome;
 	
 }

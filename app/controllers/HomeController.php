@@ -3,6 +3,7 @@ class HomeController extends Controller
 {
 	public function index()
 	{
+		$this->_flash('alert alert-success', 'ola');
 		return $this->_view();
 	}
 
