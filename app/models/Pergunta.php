@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @Entity("pergunta")
+ */
 class Pergunta extends Model
 {
 	/**
