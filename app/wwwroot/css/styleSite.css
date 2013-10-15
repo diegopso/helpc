@@ -1,0 +1,104 @@
+﻿/*Documento CSS*/
+
+/*HelpC*/
+
+html {
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border: none;
+    background-image: url("../img/img_outlets.png");
+    background-repeat: repeat;
+    border-radius: 0px;
+}
+
+.btn {
+    border-radius: 0px;
+    border: 0px;
+    height: 40px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+body {
+    min-width: 300px;
+}
+
+bobyPage{
+    position: absolute !important;
+}
+
+.areaCentral {
+    background-image: url("../img/img_type.png");
+    background-repeat: repeat;
+    padding-bottom: 40px;
+}
+
+.areaMediana {
+    background-image: url("../img/img_escheresque2.png");
+    background-repeat: repeat;
+}
+
+.areaRodape {
+    background-image: url("../img/img_type.png");
+    background-repeat: repeat;
+    position: relative !important;
+    bottom: 0px;
+    padding: 30px 10px 10px 10px;
+}
+
+#btnLogin{
+    margin: 0px auto 0px auto;
+    padding: 15px 20px 0px 20px;
+    height: 50px;
+    float: right;
+}
+#tituloInfo{
+    color: white;
+    font-size: 26pt;
+}
+#subTituloInfo{
+    color: white;
+}
+#imgCenter{
+    opacity: 0.9;
+}
+.resolImgCenter{
+    width: 90%; 
+    body: mix;
+}
+#btIniciar{
+    font-size: 20pt;
+    padding: 0px 30px 0px 20px;
+    margin: 10px auto 50px auto;
+}
+
+#btConfirmar{
+    font-size: 20pt;
+    padding: 0px 30px 0px 20px;
+    margin: 10px auto 10px auto;   
+}
+#areaDiag{
+    opacity: 0.7;
+    display: inline-block;
+}
+#areaView{
+    opacity: 0.7;
+    margin: 20px 0px 10px 0px;
+    height: 355px;
+}
+
+.btAux{
+    font-size: 20pt;
+    padding: 3px 7px 0px 7px;    
+}
+
+.tituloRodape{
+    color: white;
+    font-size: 14pt; 
+}
+
+.textoRodape{
+    color: #CFD0D1;
+}
