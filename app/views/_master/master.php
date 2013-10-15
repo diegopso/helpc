@@ -21,4 +21,3 @@
     <?= FLASH ?>
     <?= CONTENT ?>
 </body>
-</html>
