@@ -1,11 +1,13 @@
 <?php
 
-class UsuarioController extends Controller
-{
-	public function index()
-	{
-		$a = 'Diego';
-		$this->_set('nome', $a);
-		return $this->_view(array('nome' => 'Diego'));
-	}
+class UsuarioController extends Controller {
+
+    public function index() {
+        $db = Database::factory();
+        $entity = $db->Pergunta
+		->orderBy('Texto', 'ASC')
+		->paginate(null, null);
+		return $this->_view($entity);
+    }
+
 }

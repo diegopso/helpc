@@ -12,16 +12,22 @@
         </div>
         <div class="col-md-6">
             <legend>Perguntas</legend>
-            <table>
+            <table class="table-striped table-hover">
+                <?php foreach ($model->Data as $pergunta): ?>
                 <tr>
-                    <td>A tomada está conectada?</td>
+                    <td style="width: 440px"><?= $pergunta->Texto ?></td>
                     <td>
-                        <label class="radio"><input type="radio" class="radio" name="resposta1" value="1" />Sim</label>
-                        <label class="radio"><input type="radio" class="radio" name="resposta1" value="0" />Não</label>
+
+                        <label class="radio-inline"><input type="radio" name="pergunta_<?= $pergunta->Id ?>" value="1" />Sim</label>
+                        <label class="radio-inline"><input type="radio" name="resposta_<?= $pergunta->Id ?>" value="0" />Não</label>
                     </td>
                 </tr>
+                <?php endforeach; ?>
             </table>
+            <div style="margin-top: 20px">
+                <button class="btn btn-success">Adicionar Pergunta</button>
+            </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-default">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
