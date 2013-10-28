@@ -50,4 +50,22 @@ class ResultadoManager
 
 		return false;
 	}
+
+	public function similaridade($vetorLog)
+	{
+		$vetorResultado = $this->getVetor();
+		return $vetorLog->compararCom($vetorResultado);
+	}
+
+	public function getVetor()
+	{
+		$vetor = new Vetor();
+
+		foreach ($this->Perguntas as $r) 
+		{
+			$vetor->add($r->IdPergunta, $r->Resposta);
+		}
+
+		return $vetor;
+	}
 }
