@@ -25,4 +25,10 @@ class Resposta extends Model
 	 * @Column(Type="String")
 	 */
 	public $Resposta;
+
+	public static function encontrarTodas($idPergunta)
+	{
+		$db = Database::factory();
+		return $db->Resposta->where('IdPergunta = ?', $idPergunta)->all();
+	}
 }

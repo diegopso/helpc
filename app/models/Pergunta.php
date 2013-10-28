@@ -15,4 +15,9 @@ class Pergunta extends Model
 	 * @Column(Type="String")
 	 */
 	public $Texto;
+
+	public function getRespostas()
+	{
+		return Resposta::encontrarTodas($this->Id);
+	}
 }
