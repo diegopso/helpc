@@ -4,24 +4,50 @@ class HelpController extends Controller
 {
 	public function index($i = 1)
 	{
-		$set = new ConjuntoRespostaManager();
-		$set->responder(1, 'Não');
-		$set->responder(2, 'Sim');
-		$set->responder(3, 'Não');
-		$set->responder(4, 'Não');
-		$set->responder(5, 'Não');
-		$set->responder(6, 'Não');
-		$set->responder(7, 'Não');
-		$set->responder(8, 'Não');
-		$set->responder(9, 'Não');
-		$set->responder(10, 'Não');
-		$set->responder(11, 'Não');
-		$set->responder(12, 'Não');
-		exit(var_dump($set->getProvavel()));
+		Session::start();
+
+		$set = ConjuntoRespostaManager::converter(Session::get('conjunto_resposta'));
+		if(!$set)
+			$set = new ConjuntoRespostaManager();
+
+		$pergunta = Session::get('ultima_pergunta');
+		$provavel = Session::get('provavel');
+
+		if(Request::isPost())
+		{
+			if($provavel)
+			{
+				$set->eliminar($provavel->Id);
+			}
+
+			$set->responder($pergunta->Id, Request::post('resposta'));
+		}
+
+		$pergunta = Pergunta::getProximaPergunta($set->Log);
+		$provavel = $set->getProvavel();
+
+		Session::set('conjunto_resposta', $set);
+		Session::set('provavel', $provavel);
+		Session::set('ultima_pergunta', $pergunta);
+
+		if(!$pergunta)
+			return $this->_redirect('~/help/desculpe');
+
+		$this->_set('provavel', $provavel);
+		return $this->_view($pergunta);
 	}
 
 	public function desculpe()
 	{
 		return $this->_view();
+	}
+
+	public function sucesso()
+	{
+		Session::del('conjunto_resposta');
+		Session::del('provavel');
+		Session::del('ultima_pergunta');
+		$this->_flash('alert alert-success', 'Parabéns o/');
+		return $this->_redirect('~/');
 	}
 }

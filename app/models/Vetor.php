@@ -11,12 +11,13 @@ class Vetor
 
 	public function compararCom($vetor)
 	{
-		if(count($this->Dimensoes) != count($vetor->Dimensoes))
+		$vetorA = clone $this;
+		if(count($vetorA->Dimensoes) != count($vetor->Dimensoes))
 		{
-			$this->normalizar($vetor);
+			$vetorA->normalizar($vetor);
 		}
 
-		return $this->cosseno($vetor);
+		return $vetorA->cosseno($vetor);
 	}
 
 	protected function cosseno($vetor)
@@ -58,7 +59,7 @@ class Vetor
 		}
 	}
 
-	function str_to_bin($str, $mode=0) {
+	protected function str_to_bin($str, $mode=0) {
 	    $out = false;
 	    for($a=0; $a < strlen($str); $a++) {
 	        $dec = ord(substr($str,$a,1));
@@ -79,5 +80,10 @@ class Vetor
 	        if ( $mode == 2 ) $out[$a] = $bin;
 	    }
 	    return $out;
+	}
+
+	public function getKeys()
+	{
+		return array_keys($this->Dimensoes);
 	}
 }

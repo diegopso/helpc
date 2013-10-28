@@ -12,7 +12,13 @@ class ResultadoManager
 
 	const SEPARATOR = '-$-';
 
-	public function __construct($resultados)
+	public function __construct($resultados = null)
+	{
+		if($resultados)
+			$this->init($resultados);
+	}
+
+	protected function init($resultados)
 	{
 		$this->Id = $resultados->Id;
 		$this->Problema = $resultados->Problema;

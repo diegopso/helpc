@@ -20,4 +20,23 @@ class Pergunta extends Model
 	{
 		return Resposta::encontrarTodas($this->Id);
 	}
+
+	public static function getProximaPergunta($logs)
+	{
+		$db = Database::factory();
+		$idUsadas = $logs->getKeys();
+		$pergunta = null;
+
+		if($idUsadas)
+		{
+			$idUsadas = implode(",", $idUsadas);
+			$pergunta = $db->Pergunta->whereSQL('Id NOT IN ('. $idUsadas .')')->limit(1)->all();
+		}
+		else
+		{
+			$pergunta = $db->Pergunta->limit(1)->all();
+		}
+
+		return array_shift($pergunta);
+	}
 }
