@@ -6,15 +6,18 @@
     <script src="~/jquery/jquery.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             //Opções - alert(document.body.clientWidth); / alert(window.screen.width); / alert(screen.availWidth);
 
             //Comportamento do CSS quando a resolução do navegador for menor que 500px;
             if (document.body.clientWidth < 600) {
-                document.getElementById("imgCenter").className="resolImgCenter";
+                document.getElementById("imgCenter").className = "resolImgCenter";
             }
         });
+    </script>
+    <script type="text/javascript">
+        var ROOT = '<?= ROOT_VIRTUAL ?>';
     </script>
 </head>
 <body>
