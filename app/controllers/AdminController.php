@@ -39,4 +39,8 @@ class AdminController extends Controller
 		$this->_set('respostas', $respostas);
 		return $this->_view($pergunta);
 	}
+        
+        public function problema() {
+            return $this->_view();
+        }
 }
