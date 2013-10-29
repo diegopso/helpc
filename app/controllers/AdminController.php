@@ -41,6 +41,6 @@ class AdminController extends Controller
 	}
         
         public function problema() {
-            return $this->_view();
+            return $this->_view(Pergunta::all());
         }
 }
