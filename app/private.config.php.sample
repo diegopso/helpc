@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Tipo do drive do banco de dados, pode assumir os seguintes valores: mysql
+ */
+Config::set('database', array(
+	'default' => array(
+		'type' => 'mysql',
+		'host' => 'localhost',
+		'name' => 'helpc',
+		'user' => 'root',
+		'pass' => '',
+		'validate' => true
+	)
+));
+
+/**
+ * Chave de segurança (deve ser alterada)
+ */
+Config::set('salt', '');
