@@ -1,4 +1,6 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT=0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -6,8 +8,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
-CREATE DATABASE IF NOT EXISTS `helpc` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `helpc`;
 
 CREATE TABLE IF NOT EXISTS `pergunta` (
   `Texto` varchar(256) DEFAULT NULL,
@@ -40,18 +40,18 @@ CREATE TABLE IF NOT EXISTS `resposta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 INSERT INTO `resposta` (`Id`, `IdResultado`, `IdPergunta`, `Resposta`) VALUES
-(1, 2, 1, 'Não'),
+(1, 2, 1, 'NÃ£o'),
 (2, 2, 2, 'Sim'),
-(3, 2, 3, 'Não'),
-(4, 2, 4, 'Não'),
-(5, 2, 5, 'Não'),
-(6, 2, 6, 'Não'),
-(7, 2, 7, 'Não'),
-(8, 2, 8, 'Não'),
-(9, 2, 9, 'Não'),
-(10, 2, 10, 'Não'),
-(11, 2, 11, 'Não'),
-(12, 2, 12, 'Não'),
+(3, 2, 3, 'NÃ£o'),
+(4, 2, 4, 'NÃ£o'),
+(5, 2, 5, 'NÃ£o'),
+(6, 2, 6, 'NÃ£o'),
+(7, 2, 7, 'NÃ£o'),
+(8, 2, 8, 'NÃ£o'),
+(9, 2, 9, 'NÃ£o'),
+(10, 2, 10, 'NÃ£o'),
+(11, 2, 11, 'NÃ£o'),
+(12, 2, 12, 'NÃ£o'),
 (13, 3, 1, 'Sim'),
 (14, 3, 2, 'Sim'),
 (15, 3, 3, 'Sim'),
@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `view_resultados` (
 );DROP TABLE IF EXISTS `view_resultados`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_resultados` AS select `rd`.`Id` AS `Id`,`rd`.`Solucao` AS `Solucao`,`rd`.`Problema` AS `Problema`,group_concat(`r`.`Id` separator '-$-') AS `IdsRespostas`,group_concat(`r`.`Resposta` separator '-$-') AS `Respostas`,group_concat(`p`.`Id` separator '-$-') AS `IdsPerguntas`,group_concat(`p`.`Texto` separator '-$-') AS `Perguntas` from ((`pergunta` `p` join `resposta` `r` on((`p`.`Id` = `r`.`IdPergunta`))) join `resultado` `rd` on((`rd`.`Id` = `r`.`IdResultado`))) group by `rd`.`Id`;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
