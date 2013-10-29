@@ -16,17 +16,32 @@ class Pergunta extends Model {
      */
     public $Texto;
 
-    //método para salvar nova pergunta
-    public function save($pergunta) {
-        try {
-            $db = Database::factory();
-            $novaPergunta = new Pergunta();
-            $novaPergunta->Texto = $pergunta;
-            $db->Pergunta->insert($novaPergunta);
-            return($novaPergunta->Id);
-        } catch (Exception $e) {
-            return("Erro ao criar pergunta: " . $e);
-        }
-    }
+	/**
+	 * @Column(Type="String")
+	 */
+	public $Texto;
 
+	public function getRespostas()
+	{
+		return Resposta::encontrarTodas($this->Id);
+	}
+
+	public static function getProximaPergunta($logs)
+	{
+		$db = Database::factory();
+		$idUsadas = $logs->getKeys();
+		$pergunta = null;
+
+		if($idUsadas)
+		{
+			$idUsadas = implode(",", $idUsadas);
+			$pergunta = $db->Pergunta->whereSQL('Id NOT IN ('. $idUsadas .')')->limit(1)->all();
+		}
+		else
+		{
+			$pergunta = $db->Pergunta->limit(1)->all();
+		}
+
+		return array_shift($pergunta);
+	}
 }

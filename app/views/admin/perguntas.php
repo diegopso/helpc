@@ -13,7 +13,7 @@
 		<?php if($model->Count): ?>
 			<?php foreach($model->Data as $p): ?>
 				<tr>
-					<td><?= $p->Texto ?></td>
+					<td><a href="~/admin/respostas/<?= $p->Id ?>"><?= $p->Texto ?></a></td>
 				</tr>
 			<?php endforeach; ?>
 		<?php else: ?>
