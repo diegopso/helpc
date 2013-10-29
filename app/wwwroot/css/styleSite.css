@@ -102,3 +102,7 @@ bobyPage{
 .textoRodape{
     color: #CFD0D1;
 }
+
+.areaInput{
+    border-radius: 0;
+}

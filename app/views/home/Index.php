@@ -1,31 +1,4 @@
-<!--Interna-->
-<div class="bobyPage" style="position: relative !important;">
-    <div class="navbar navbar-default navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a href="#" class="navbar-brand">Seja bem vindo ao <b>HelpC</b></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="#">Contato</a>
-                    </li>
-                </ul>
-                <!--Botão - Modal Login-->
-                <a id="btnLogin" data-toggle="modal" href="#ModalLogin" class="btn btn-info btn-large"><b>LOGIN</b></a>
-            </div>
-        </div>
-    </div>
-
+<!--Home-->
     <!--Início area central-->
     <div class="row">
         <div class="col col-md-12 areaCentral">
@@ -207,4 +180,6 @@
         $('#areaView').hide();
         $("#btIniciar").slideToggle("slow");
     };
+    
+        $('#activeHome').attr('class', 'active');   
 </script>
