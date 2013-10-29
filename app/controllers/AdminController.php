@@ -41,6 +41,6 @@ class AdminController extends Controller
 	}
         
         public function problema() {
-            return view();
+            return $this->_view();
         }
 }
