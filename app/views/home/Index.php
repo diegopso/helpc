@@ -1,5 +1,4 @@
 <!--Home-->
-    <!--Início area central-->
     <div class="row">
         <div class="col col-md-12 areaCentral">
             <img id="imgCenter" class="col col-md-6" src="~/img/img_Center.png" />
