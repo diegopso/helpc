@@ -11,9 +11,13 @@ class AdminController extends Controller
 	{
 		if(Request::isPost())
 		{
-			$pergunta = new Pergunta();
-			$this->_data($pergunta);
+			
+                    foreach ($_POST as $key => $value) {
+                        $pergunta = Pergunta::get($key);
+                        $pergunta->Texto = $value;
 			$pergunta->save();
+                    }
+                    
 		}
 
 		$perguntas = Pergunta::all($i, 20);
@@ -41,6 +45,6 @@ class AdminController extends Controller
 	}
         
         public function problema() {
-            return $this->_view();
+            return $this->_view(Pergunta::all());
         }
 }
