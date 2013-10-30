@@ -1,59 +1,57 @@
 <?php
 
-class AdminController extends Controller
-{
-	public function index()
-	{
-		return $this->_redirect('~/');
-	}
+class AdminController extends Controller {
 
-	public function perguntas($i = 0)
-	{
-		if(Request::isPost())
-		{
-			
-                    foreach ($_POST as $key => $value) {
-                        $pergunta = Pergunta::get($key);
-                        $pergunta->Texto = $value;
-			$pergunta->save();
-                    }
-                    
-		}
+    /** @Auth("admin") */
+    public function __construct() {
+        
+    }
 
-		$perguntas = Pergunta::all($i, 20);
-		return $this->_view($perguntas);
-	}
+    public function index() {
+        return $this->_view();
+    }
 
-	public function respostas($id)
-	{
-		$pergunta = Pergunta::get($id);
-		$respostas = $pergunta->getRespostas();
+    public function perguntas($i = 0) {
+        if (Request::isPost()) {
 
-		if(Request::isPost())
-		{
-			foreach ($respostas as $r) 
-			{
-				$r->Resposta = Request::post($r->Id);
-				$r->save();
+            foreach ($_POST as $key => $value) {
+                $pergunta = Pergunta::get($key);
+                $pergunta->Texto = $value;
+                $pergunta->save();
+            }
+        }
 
-				return $this->_redirect('~/admin/respostas/' . $id);
-			}
-		}
+        $perguntas = Pergunta::all($i, 20);
+        return $this->_view($perguntas);
+    }
 
-		$this->_set('respostas', $respostas);
-		return $this->_view($pergunta);
-	}
-	
-	public function adicionarPergunta()
-	{
-		$pergunta = new Pergunta();
-		$pergunta->Texto = Request::get('pergunta');
-		$pergunta->save();
-		
-		return $this->_json($pergunta);
-	}
-     
-	public function problema() {
-		return $this->_view(Pergunta::all());
-	}
+    public function respostas($id) {
+        $pergunta = Pergunta::get($id);
+        $respostas = $pergunta->getRespostas();
+
+        if (Request::isPost()) {
+            foreach ($respostas as $r) {
+                $r->Resposta = Request::post($r->Id);
+                $r->save();
+
+                return $this->_redirect('~/admin/respostas/' . $id);
+            }
+        }
+
+        $this->_set('respostas', $respostas);
+        return $this->_view($pergunta);
+    }
+
+    public function adicionarPergunta() {
+        $pergunta = new Pergunta();
+        $pergunta->Texto = Request::get('pergunta');
+        $pergunta->save();
+
+        return $this->_json($pergunta);
+    }
+
+    public function problema() {
+        return $this->_view(Pergunta::all());
+    }
+
 }
