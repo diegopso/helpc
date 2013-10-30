@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de Dados: `helpc`
 --
+CREATE DATABASE `helpc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `helpc`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `pergunta` (
 --
 
 INSERT INTO `pergunta` (`Texto`, `Id`) VALUES
-('O LED ', 1),
+('O LED do gabinete estÃ¡ aceso?', 1),
 (' O LED do monitor estÃ¡ aceso? ', 2),
 ('O ventilador da fonte estÃ¡ funcionando? ', 3),
 ('Aparece alguma mensagem de erro na tela?', 4),
