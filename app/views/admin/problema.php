@@ -15,14 +15,16 @@
             </div>
             <div class="col-md-7">
                 <legend>Perguntas</legend>
-                <table class="table table-condensed">
+                <table id="table-perguntas" class="table table-condensed">
                     <?php foreach ($model->Data as $pergunta): ?>
                         <tr>
                             <td style="width: 440px"><?= $pergunta->Texto ?></td>
                             <td>
-                                <label class="radio-inline"><input type="radio" name="pergunta_<?= $pergunta->Id ?>" value="1" />Sim</label>
-                                <label class="radio-inline"><input type="radio" name="resposta_<?= $pergunta->Id ?>" value="0" />Não</label>
-                                <span id="pergunta_<?= $pergunta->Id ?>" title="Remover pergunta deste problema" class="glyphicon glyphicon-remove" style="margin-left: 5px"></span>
+								<label class="radio-inline"><input type="radio" name="pergunta_<?= $pergunta->Id ?>" value="1" />Sim</label>
+								<label class="radio-inline"><input type="radio" name="resposta_<?= $pergunta->Id ?>" value="0" />Não</label>
+								<a href="javascript:void(0);" class="btn-remover">
+									<span id="pergunta_<?= $pergunta->Id ?>" title="Remover pergunta deste problema" class="glyphicon glyphicon-remove"></span>
+								</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -44,33 +46,13 @@
                 </div>
                 <div class="modal-body">
                     <label>Digite a pergunta:</label>
-                    <textarea id="pergunta" class="form-control"></textarea>
+                    <textarea id="pergunta" name="pergunta" class="form-control"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarPergunta()" data-dismiss="modal">Salvar</button>
+                    <button id="salvar-pergunta" type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </div>
-<script type="text/javascript">
-    function adicionarPergunta() {
-        var pergunta = $("#pergunta").val();
-        $.ajax({
-            type: "POST",
-            url: ROOT + "usuario/adicionarPergunta",
-            data: {pergunta: pergunta},
-            beforeSend: function() {
-
-            },
-            error: function(x, e, t) {
-                alert("Ocorreu um erro no ajax");
-            },
-            success: function(data) {
-                var idPergunta = data.d;
-                alert(idPergunta);
-            }
-        });
-    }
-</script>

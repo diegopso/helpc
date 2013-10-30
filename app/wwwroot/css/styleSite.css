@@ -106,3 +106,8 @@ bobyPage{
 .areaInput{
     border-radius: 0;
 }
+
+.btn-remover{
+	color: black;
+	margin-left: 5px;
+}
