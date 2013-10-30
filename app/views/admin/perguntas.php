@@ -1,24 +1,33 @@
-<form method="POST">
-    <input type="submit" />
 
-    <table>
-        <thead>
-            <tr>
-                <td>Pergunta</td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if ($model->Count): ?>
-                <?php foreach ($model->Data as $p): ?>
+<div class="container">
+    <div class="row" style="margin-top: 25px;">
+        <form method="POST" class="col-md-5">
+            <input class="form-control areaInput" name="Texto" type="text" />
+            <br />
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <div class="col-md-7 well">
+            <table class="table table-condensed" style="margin-top: -5px;">
+                <thead>
                     <tr>
-                        <td><input name="<?= $p->Id ?>" style="width: 700px" type="text" value="<?= $p->Texto ?>" /></a></td>
+                        <td><p class="textTitulo">Perguntas</p></td>
                     </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td>Nenhum resultado</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
-</form>
+                </thead>
+                <tbody>
+                    <?php if ($model->Count): ?>
+                        <?php foreach ($model->Data as $p): ?>
+                            <tr>
+                                <td><a href="~/admin/respostas/<?= $p->Id ?>"><?= $p->Texto ?></a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td>Nenhum resultado</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
