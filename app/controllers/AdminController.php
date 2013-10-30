@@ -39,8 +39,17 @@ class AdminController extends Controller
 		$this->_set('respostas', $respostas);
 		return $this->_view($pergunta);
 	}
+	
+	public function adicionarPergunta()
+	{
+		$pergunta = new Pergunta();
+		$pergunta->Texto = Request::get('pergunta');
+		$pergunta->save();
+		
+		return $this->_json($pergunta);
+	}
         
-        public function problema() {
-            return $this->_view();
-        }
+	public function problema() {
+		return $this->_view();
+	}
 }
