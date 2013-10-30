@@ -106,3 +106,9 @@ bobyPage{
 .areaInput{
     border-radius: 0;
 }
+
+.textTitulo{
+    margin: 0;
+    margin-top: -12px;
+    font-size: 14pt;  
+}
