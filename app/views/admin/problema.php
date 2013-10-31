@@ -1,20 +1,9 @@
 <!--Usuario-->
 <div class="container">
     <form role="form" method="post">
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-5">
-                <div class="form-group">
-                    <legend>Informe o problema:</legend>
-                    <textarea class="form-control areaInput" name="problema"></textarea>
-                </div>    
-                <div class="form-group">
-                    <legend>Informe a solução:</legend>
-                    <textarea class="form-control areaInput" name="solucao" ></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+        <div class="row ajusteTop">
             <div class="col-md-7">
-                <legend>Perguntas</legend>
+                <h2>Perguntas</h2>
                 <table class="table table-condensed">
                     <?php foreach ($model->Data as $pergunta): ?>
                         <tr>
@@ -30,6 +19,18 @@
                 <div style="margin-top: 20px">
                     <a data-toggle="modal" href="#modalPergunta" class="btn btn-success">Adicionar Pergunta</a>
                 </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <h3>Informe o problema</h3>
+                    <textarea class="form-control areaInput" name="problema"></textarea>
+                </div>  
+                <br />
+                <div class="form-group">
+                    <h3>Informe a Solução</h3>
+                    <textarea class="form-control areaInput" name="solucao" ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
     </form>

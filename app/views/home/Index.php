@@ -1,184 +1,198 @@
-<!--Home-->
-    <div class="row">
-        <div class="col col-md-12 areaCentral">
-            <img id="imgCenter" class="col col-md-6" src="~/img/img_Center.png" />
-            <div class="container">
-                <div class="row">
-                    <div align="center" class="col col-md-6">
-                        <h1 id="tituloInfo">Obtenha diagnósticos rápidos do seu PC com o 'HelpC Diagnóstico'</h1>
-                        <h3 id="subTituloInfo">Está cansado de perder tempo aguardando o diagnóstico do seu PC?
-                            que tal experimentar o HelpC!
-                        </h3>
-                        <br>
-                        <!--Botão - Modal Descrição-->
-                        <a data-toggle="modal" href="#ModalInfo" class="btn btn-info btn-large"><b>Saiba mais</b></a> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row areaMediana">
-        <div class="container">    
-            <div class="col col-md-12" align="center">
-                <div class="col col-md-6">
-                    <h2>Vamos iniciar o diagnóstico de seu computador?</h2>
-                    <h4>Quando estiver pronto! clique em Iniciar.</h4>
-                    <button id="btIniciar" title="Teste" type="button" class="btn btn-large btn-success" onclick="exibirPop('areaDiag')">
-                        <span class="glyphicon glyphicon-play-circle"></span> Iniciar</button>
-                    <!--Respostas-->    
-                    <div id="areaDiag" class="well">
-                        <h3 style="color: #39B3D7;">
-                            <b>Seu computador está ligando?</b>
-                        </h3>
-                        <div class="well col col-md-4">
-                            <span class="input-group-addon">
-                                <label><input type="radio" name="optionsRadios"> SIM</label>
-                            </span>
-                        </div>
-                        <div class="well col col-md-4">
-                            <span class="input-group-addon">
-                                <label><input type="radio" name="optionsRadios"> NÃO SEI</label>
-                            </span>
-                        </div>
-                        <div class="well col col-md-4">
-                            <span class="input-group-addon">
-                                <label><input type="radio" name="optionsRadios"> NÃO</label>
-                            </span>
-                        </div>
-                        <button id="btConfirmar" type="button" class="btn btn-large btn-info">
-                            <span class="glyphicon glyphicon-ok-sign"></span> Confirmar</button>
-                        <button type="button" class="btAux btn btn-large btn-info" onclick="exibirPop2('areaView')">
-                            <span class="glyphicon glyphicon-th-list"></span></button>
-                        <button type="button" class="btAux btn btn-large btn-default" onclick="reset()" style="background-color: gainsboro;">
-                            <span class="glyphicon glyphicon-arrow-left"></span></button>
-                    </div>
-                </div>
-                <div id="areaView" class="well col col-md-6">
-                    ..
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--MODAL-->
+<!-- Banner -->
+<div id="banner-wrapper">
+    <section id="banner">
+        <h2>Está cansado de perder tempo aguardando o diagnóstico do seu PC?</h2>
+        <h2>que tal experimentar o HelpC!</h2>
+        <span class="byline">Antes de começar, deseja conhecer a ferramenta? caso queira <a href="#">'Clique Aqui'</a></span>
+        <a href="#" class="button">Iniciar diagnóstico</a>
+    </section>
+</div>
+<!-- /Banner -->
 
-    <!--Modal Login-->
-    <div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="width: 350px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Área Restrita / Login</h4>
-                </div>
-                <div class="modal-body">
-                    <input class="form-control" type="text" placeholder="E-mail">
-                    <br>
-                    <input class="form-control" type="text" placeholder="Senha">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Entrar</button>
-                </div>
+<!-- Main -->
+<div id="main-wrapper">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="12u">
+
+                <!-- Highlight -->
+                <section class="is-highlight">
+                    <ul class="special">
+                        <li><a href="#" class="battery">Battery</a></li>
+                        <li><a href="#" class="tablet">Tablet</a></li>
+                        <li><a href="#" class="flask">Flask</a></li>
+                        <li><a href="#" class="chart">Pie Chart?</a></li>
+                    </ul>
+                    <header>
+                        <h2>Técnico? você não precisa mais disso!</h2>
+                        <span class="byline">com o helpc você mesmo consegue realizar um dignóstico do seu PC</span>
+                    </header>
+                    <p>
+                        Com esta ferramenta você poderá rapidamente realizar um diagnótisco do seu compatudor que está
+                        apresentando defeito.<br/>O funcionamento do HelpC é simples, o sistema pergunta a você, sobre possíveis problemas
+                        , e você responde sobre o estado do seu computador. Simples né?
+                    </p>
+                    <div class="actions">
+                        <a href="#" class="button button-big">Saiba Mais</a>
+                    </div>
+                </section>
+                <!-- /Highlight -->
+
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="12u">
 
-    <!--Modal Descrição do HelpC-->
-    <div class="modal fade" id="ModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="width: 70%;">
-            <div class="modal-content" style=" line-height: 25px;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><b>Conheça mais sobre HelpC Diagnósticos Inteligentes</b></h4>
-                </div>
-                <div class="modal-body">
-                    <p align="justify">A aplicação HelpC consiste em um sistema especialista que visa fornecer diagnósticos a usuários 
-                        de computadores sobre possíveis problemas que podem estar presentes nas suas máquinas. Visando 
-                        propor uma alternativa aos métodos convencionais de diagnósticos de problemas ocorridos em computadores, 
-                        o HelpC consiste em fazer o mesmo procedimento, no entanto, utilizando técnicas da IA juntamente com 
-                        outros recursos e tecnologias da informação, para apresentar um diagnóstico, mediante as informações 
-                        previamente informada pelo usuário, que possa explicitar e informar ao mesmo, o real problema que 
-                        ocorre com sua máquina, podendo tomar uma ação, mediante o resultado adquirido.</p>
-                    <br>
-                    <p align="justify">Aplicação utiliza uma interface clara e objetiva, que consiste em contribuir em uma melhor experiência 
-                        de uso do usuário com o sistema. Inicialmente, o diagnóstico se dá por meio de perguntas que são 
-                        apresentadas ao usuário, no qual este interage inferindo suas respostas, ou seja, selecionando as 
-                        opções exibidas pela aplicação de acordo com o seu conhecimento sobre o problema ocorrido. A aplicação 
-                        se encarrega de cruzar as informações apresentadas pelo usuário com a sua base de conhecimento, que de 
-                        acordo com essas informações tende a chegar em um resultado que retrate o real problema presente na 
-                        máquina ou algo o mais próximo possível disto.</p>
-                    <br>
-                    <p align="justify">Este processo de diagnóstico se dá por meio de uma técnica da IA, conhecida como “sistemas especialistas”, 
-                        que faz uso de um domínio específico (Diagnóstico de computadores), juntamente base de conhecimento 
-                        aplicado a este domínio e demais tecnologias da informações. Juntos todos estes recursos operam a favor 
-                        de um propósito: encontrar uma solução para uma real situação ou problema presente na máquina do usuário.</p>
-                    <br>
-                    <p align="justify">A aplicação, posteriormente, irá atribuir características de inteligência, partindo do pressuposto que 
-                        pode aprender uma solução, caso não esteja, ou que ainda não pertença a sua base de conhecimento, 
-                        ou mesmo melhorar a eficácia do diagnóstico. Contudo, a aplicação também irá permitir a intervenção 
-                        de usuário que tem conhecimento do domínio para incremento manual da base de conhecimento. Este 
-                        comportamento por parte da aplicação, possibilita a maximização da base de conhecimento, logo também 
-                        das soluções que podem ser apresentadas. Desta forma a aplicação estará sempre convergindo a uma ótima 
-                        solução, consideração que caso a aplicação desconheça a solução baseado na informações cedidas, a HelpC 
-                        captar os dados, levanta informações referente ao problema, cruza estas informações, propondo uma 
-                        solução o que outrora poderá ser utilizada.</p>       
-                    <br>
-                    <p align="justify">A aplicação HelpC, visa trazer comodidade e facilidade aos usuários que possuem interesse em conhecer 
-                        ou obter maiores informações sobre determinado problema que possa está ocorrendo em sua máquina. 
-                        Podendo o próprio usuário executar o reparo do problema, ou obter informações necessárias sobre o 
-                        ocorrido com o computador, facilitando sua comunicação com profissional especializado na área de 
-                        manutenção de computadores.</p> 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Entendi!</button>
-                </div>
+                <!-- Features -->
+                <section class="is-features">
+                    <h2 class="major"><span>O que o help diagnostica?</span></h2>
+                    <span class="byline">Problemas que envolvem...</span>
+                    <div>
+                        <div class="row">
+                            <div class="3u">
+
+                                <!-- Feature -->
+                                <section class="is-feature">
+                                    <a href="#" class="image image-full"><img src="images/pic01.jpg" alt="" /></a>
+                                    <h3><a href="#">Software</a></h3>
+                                    <p>
+                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
+                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                    </p>
+                                </section>
+                                <!-- /Feature -->
+
+                            </div>
+                            <div class="3u">
+
+                                <!-- Feature -->
+                                <section class="is-feature">
+                                    <a href="#" class="image image-full"><img src="images/pic02.jpg" alt="" /></a>
+                                    <h3><a href="#">Hardware</a></h3>
+                                    <p>
+                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
+                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                    </p>
+                                </section>
+                                <!-- /Feature -->
+
+                            </div>
+                            <div class="3u">
+
+                                <!-- Feature -->
+                                <section class="is-feature">
+                                    <a href="#" class="image image-full"><img src="images/pic03.jpg" alt="" /></a>
+                                    <h3><a href="#">Periféricos</a></h3>
+                                    <p>
+                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
+                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                    </p>
+                                </section>
+                                <!-- /Feature -->
+
+                            </div>
+                            <div class="3u">
+
+                                <!-- Feature -->
+                                <section class="is-feature">
+                                    <a href="#" class="image image-full"><img src="images/pic04.jpg" alt="" /></a>
+                                    <h3><a href="http://getlamp.com">Suporte</a></h3>
+                                    <p>
+                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
+                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                    </p>
+                                </section>
+                                <!-- /Feature -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /Features -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+
+                <!-- Blog -->
+                <section class="is-blog">
+                    <h2 class="major"><span>Colaboradores</span></h2>
+                    <div>
+                        <div class="row">
+                            <div class="9u">
+                                <div class="content content-left">
+
+                                    <!-- Featured Post -->
+                                    <article class="is-post">
+                                        <header>
+                                            <span class="byline">Conheça os colaboradores do projeto</span>
+                                            <ul class="meta">
+                                                <li class="timestamp">15 minutes ago</li>
+                                                <li class="comments"><a href="#">8</a></li>
+                                            </ul>
+                                        </header>
+                                        <section class="is-highlight">
+                                            <ul class="special">
+                                                <li>
+                                                    <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-frc1/297169_298320830193500_1574180698_n.jpg" alt="..." class="img-circle imgPerfil">
+                                                    <h4>Diego Oliveira</h4>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn2/1186031_4743784172142_1033181934_n.jpg" alt="..." class="img-circle imgPerfil">
+                                                    <h4>Djhonathas Cardoso</h4>
+                                                </li>
+                                                <li>
+                                                    <img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash4/270359_456018917794587_903302850_n.jpg" alt="..." class="img-circle imgPerfil">
+                                                    <h4>Sérgio Barros</h4>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                        <p>
+                                            Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent 
+                                            semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a 
+                                            dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum 
+                                            dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur 
+                                            accumsan.
+                                        </p>
+                                    </article>
+                                    <!-- /Featured Post -->
+
+                                </div>
+                            </div>
+                            <div class="3u">
+                                <div class="sidebar">
+
+                                    <!-- Archives -->
+                                    <ul class="style2">
+  
+                                        <li>
+                                            <article class="is-post-summary">
+                                                <h3><a href="#">Apoio</a></h3>
+                                                
+                                                <ul class="meta">
+                                                    <li class="comments"><a href="http://ulbra-to.br/" target="_blank">CEULP ULBRA</a></li>
+                                                </ul>
+                                            </article>
+                                        </li>
+                                        <li>
+                                            <article class="is-post-summary">
+                                                <h3><a href="#">Links</a></h3>
+                                                <ul class="meta">
+                                                    <li class="comments"><a href="#">Link1</a></li>
+                                                    <li class="comments"><a href="#">Link2</a></li>
+                                                </ul>
+                                            </article>
+                                        </li>
+                                    </ul>
+                                    <!-- /Archives -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /Blog -->
             </div>
         </div>
     </div>
 </div>
-<footer>
-    <div class="col col-md-12 areaRodape">
-        <div class="container">
-            <div class="col-md-3">
-                <h4 class="tituloRodape">Suporte da Base de Conhecimento</h4>
-                <div class="textoRodape">
-                    <ul>
-                        <li>PROBLEMAS GERAIS DA CPU</li>
-                        <li>Memoria</li>
-                        <li>Disco Rigido (HD)</li>
-                        <li>Fonte de alimentação</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h4 class="tituloRodape">Suporte da Base de Conhecimento</h4>
-                <div class="textoRodape">
-                    <ul>
-                        <li>Memoria</li>
-                        <li>Disco Rigido (HD)</li>
-                        <li>Fonte de alimentação</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<script>
-    $('#areaDiag').hide();
-    $('#areaView').hide();
-    
-    function exibirPop(id) {
-        $("#" + id).slideToggle("slow");
-        //$("#areaView").slideToggle("slow");
-        $("#btIniciar").hide();
-    };
-    function exibirPop2(id) {
-        $("#" + id).slideToggle("slow");
-    };
-    function reset() {
-        $('#areaDiag').hide();
-        $('#areaView').hide();
-        $("#btIniciar").slideToggle("slow");
-    };
-    
-        $('#activeHome').attr('class', 'active');   
-</script>
+<!-- /Main -->

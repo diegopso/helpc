@@ -29,6 +29,11 @@ bobyPage{
     position: absolute !important;
 }
 
+.well{
+    border-radius: 0;
+    font-family: serif;
+}
+
 .areaCentral {
     background-image: url("../img/img_type.png");
     background-repeat: repeat;
@@ -45,6 +50,7 @@ bobyPage{
     background-repeat: repeat;
     position: relative !important;
     bottom: 0px;
+    width: 100%;
     padding: 30px 10px 10px 10px;
 }
 
@@ -110,5 +116,28 @@ bobyPage{
 .textTitulo{
     margin: 0;
     margin-top: -12px;
+    margin-bottom: 5px;
     font-size: 14pt;  
+}
+
+.ajusteTop{
+    margin-top: 25px;
+}
+
+.bkgroundPage{
+    background-image: url("../img/img_escheresqueTrans.png");
+    background-repeat: repeat;
+    padding-bottom: 20px;
+}
+
+.imgPerfil{
+    width: 200px;
+}
+
+p.infoCopyright{
+    margin-bottom: 0 !important;
+}
+
+.ajusteHeader{
+  padding: 3em 0 0em 0 !important;  
 }
