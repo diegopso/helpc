@@ -47,7 +47,7 @@
             <li><a href="~/home/contato">Contato</a></li>
             <?php
             if (Auth::isLogged()) {
-                echo '<li><a id="acessoLogout" href="#">Sair</a></li>';
+                echo '<li><a id="acessoLogout" href="~/home/logout">Sair</a></li>';
             } else {
                 echo '<li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>';
             }
