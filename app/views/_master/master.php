@@ -6,28 +6,27 @@
     <meta name="keywords" content="" />
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/styleSite.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/skel-noscript.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/style-desktop.css" />
     <script src="~/jquery/jquery.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet" />
     <script src="~/js/config.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/skel-panels.min.js"></script>
-    <link rel="stylesheet" href="~/css/skel-noscript.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
-    <link rel="stylesheet" href="~/css/style-desktop.css" />
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
     <script src="~/js/main.js"></script>
     <script type="text/javascript">
         var ROOT = '<?= ROOT_VIRTUAL ?>';
-		$(document).ready(function() {
-            //Opções - alert(document.body.clientWidth); / alert(window.screen.width); / alert(screen.availWidth);
-            //Comportamento do CSS quando a resolução do navegador for menor que 500px;
-            if (document.body.clientWidth < 600) {
-                document.getElementById("imgCenter").className = "resolImgCenter";
-            }
-        });
+        function ocultarLogin(){
+            $('#acessoLogin').show();
+        }
+        function ocultarLogin(){
+            $('#acessoLogin').show();
+        }
     </script>
 </head>
 <body class="homepage">
@@ -43,9 +42,16 @@
     <!-- Nav -->
     <nav id="nav" class="skel-panels-fixed">
         <ul>
-            <li class="current_page_item"><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
+            <li class="current_page_item"><a href="~/home">Home</a></li>
+            <li><a href="~/home/sobre">Sobre</a></li>
+            <li><a href="~/home/contato">Contato</a></li>
+            <?php
+            if (Auth::isLogged()) {
+                echo '<li><a id="acessoLogout" href="#">Sair</a></li>';
+            } else {
+                echo '<li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>';
+            }
+            ?>
         </ul>
     </nav>
     <!-- /Nav -->

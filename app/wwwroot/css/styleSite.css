@@ -34,6 +34,13 @@ bobyPage{
     font-family: serif;
 }
 
+.error {
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-size: 15pt;
+}
+
 .areaCentral {
     background-image: url("../img/img_type.png");
     background-repeat: repeat;
@@ -56,10 +63,30 @@ bobyPage{
 
 #btnLogin{
     margin: 0px auto 0px auto;
-    padding: 15px 20px 0px 20px;
-    height: 50px;
-    float: right;
 }
+
+.pgLogin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btAcesso{
+    display: none !important;
+}
+
+a.acessoLogout{
+    color: #E3DAA8;
+}
+
+.pgCadastro{
+    max-width: 430px;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;  
+}
+
 #tituloInfo{
     color: white;
     font-size: 26pt;
@@ -114,8 +141,8 @@ bobyPage{
 }
 
 .btn-remover{
-	color: black;
-	margin-left: 5px;
+    color: black;
+    margin-left: 5px;
 }
 
 .textTitulo{
@@ -132,6 +159,7 @@ bobyPage{
 .bkgroundPage{
     background-image: url("../img/img_escheresqueTrans.png");
     background-repeat: repeat;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -144,5 +172,7 @@ p.infoCopyright{
 }
 
 .ajusteHeader{
-  padding: 3em 0 0em 0 !important;  
+    padding: 3em 0 0em 0 !important;  
 }
+
+

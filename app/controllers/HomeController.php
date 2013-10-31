@@ -6,8 +6,16 @@ class HomeController extends Controller {
         return $this->_view();
     }
 
+    public function sobre() {
+        return $this->_view();
+    }
+
+    public function contato() {
+        return $this->_view();
+    }
+
     public function login() {
-        if(Auth::isLogged()){
+        if (Auth::isLogged()) {
             $this->_redirect('~/admin/problema');
         }
         if (is_post) {
@@ -21,10 +29,11 @@ class HomeController extends Controller {
         }
         return $this->_view();
     }
-    
+
     public function logout() {
         Auth::clear();
         Session::clear();
         $this->_redirect('~/');
     }
+
 }

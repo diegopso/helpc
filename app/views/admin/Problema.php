@@ -3,29 +3,25 @@
     <form role="form" method="post">
         <div class="row ajusteTop">
             <div class="col-md-7">
-<<<<<<< HEAD:app/views/admin/problema.php
                 <h2>Perguntas</h2>
                 <table class="table table-condensed">
-=======
-                <legend>Perguntas</legend>
-                <table id="table-perguntas" class="table table-condensed">
->>>>>>> 7b123b27f4c80f2119c42fbeb695f94d9e686811:app/views/admin/Problema.php
-                    <?php foreach ($model->Data as $pergunta): ?>
-                        <tr>
-                            <td style="width: 440px"><?= $pergunta->Texto ?></td>
-                            <td>
-								<label class="radio-inline"><input type="radio" name="pergunta_<?= $pergunta->Id ?>" value="1" />Sim</label>
-								<label class="radio-inline"><input type="radio" name="resposta_<?= $pergunta->Id ?>" value="0" />Não</label>
-								<a href="javascript:void(0);" class="btn-remover">
-									<span id="pergunta_<?= $pergunta->Id ?>" title="Remover pergunta deste problema" class="glyphicon glyphicon-remove"></span>
-								</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
-                <div style="margin-top: 20px">
-                    <a data-toggle="modal" href="#modalPergunta" class="btn btn-success">Adicionar Pergunta</a>
-                </div>
+                    <table id="table-perguntas" class="table table-condensed">
+                        <?php foreach ($model->Data as $pergunta): ?>
+                            <tr>
+                                <td style="width: 440px"><?= $pergunta->Texto ?></td>
+                                <td>
+                                    <label class="radio-inline"><input type="radio" name="pergunta_<?= $pergunta->Id ?>" value="1" />Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="resposta_<?= $pergunta->Id ?>" value="0" />Não</label>
+                                    <a href="javascript:void(0);" class="btn-remover">
+                                        <span id="pergunta_<?= $pergunta->Id ?>" title="Remover pergunta deste problema" class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <div style="margin-top: 20px">
+                        <a data-toggle="modal" href="#modalPergunta" class="btn btn-success">Adicionar Pergunta</a>
+                    </div>
             </div>
             <div class="col-md-5">
                 <div class="form-group">
