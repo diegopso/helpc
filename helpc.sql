@@ -1,19 +1,42 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 
+-- Versão do Servidor: 5.5.27
+-- Versão do PHP: 5.4.7
+
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT=0;
-START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+--
+-- Banco de Dados: `helpc`
+--
+CREATE DATABASE `helpc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `helpc`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pergunta`
+--
 
 CREATE TABLE IF NOT EXISTS `pergunta` (
   `Texto` varchar(256) CHARACTER SET latin1 DEFAULT NULL,
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Extraindo dados da tabela `pergunta`
+--
 
 INSERT INTO `pergunta` (`Texto`, `Id`) VALUES
 ('O LED do gabinete estÃ¡ aceso?', 1),
@@ -29,6 +52,12 @@ INSERT INTO `pergunta` (`Texto`, `Id`) VALUES
 ('As configuraÃ§Ãµes duram apenas alguns dias ou semanas?', 11),
 ('A imagem no monitor pisca, treme ou diminui de repente?', 12);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `resposta`
+--
+
 CREATE TABLE IF NOT EXISTS `resposta` (
   `Id` int(11) NOT NULL,
   `IdResultado` int(11) DEFAULT NULL,
@@ -37,12 +66,24 @@ CREATE TABLE IF NOT EXISTS `resposta` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `resultado`
+--
+
 CREATE TABLE IF NOT EXISTS `resultado` (
   `Id` int(11) NOT NULL,
   `Solucao` varchar(1024) CHARACTER SET latin1 DEFAULT NULL,
   `Problema` varchar(256) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
 
 CREATE TABLE IF NOT EXISTS `usuario` (
   `Id` int(11) NOT NULL,
@@ -51,7 +92,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Nome` varchar(64) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

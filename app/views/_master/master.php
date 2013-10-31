@@ -18,6 +18,17 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+    <script src="~/js/main.js"></script>
+    <script type="text/javascript">
+        var ROOT = '<?= ROOT_VIRTUAL ?>';
+		$(document).ready(function() {
+            //Opções - alert(document.body.clientWidth); / alert(window.screen.width); / alert(screen.availWidth);
+            //Comportamento do CSS quando a resolução do navegador for menor que 500px;
+            if (document.body.clientWidth < 600) {
+                document.getElementById("imgCenter").className = "resolImgCenter";
+            }
+        });
+    </script>
 </head>
 <body class="homepage">
     <!-- Header -->

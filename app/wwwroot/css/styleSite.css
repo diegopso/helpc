@@ -113,6 +113,11 @@ bobyPage{
     border-radius: 0;
 }
 
+.btn-remover{
+	color: black;
+	margin-left: 5px;
+}
+
 .textTitulo{
     margin: 0;
     margin-top: -12px;
