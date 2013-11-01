@@ -133,16 +133,16 @@
                                         <section class="is-highlight">
                                             <ul class="special">
                                                 <li>
-                                                    <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-frc1/297169_298320830193500_1574180698_n.jpg" alt="..." class="img-circle imgPerfil">
+                                                    <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-frc1/297169_298320830193500_1574180698_n.jpg" alt="foto diego oliveira" class="img-circle imgPerfil">
                                                     <h4>Diego Oliveira</h4>
-                                                    
+
                                                 </li>
                                                 <li>
-                                                    <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn2/1186031_4743784172142_1033181934_n.jpg" alt="..." class="img-circle imgPerfil">
-                                                    <h4>Djhonathas Cardoso</h4>
+                                                    <img src="http://m.c.lnkd.licdn.com/mpr/mpr/shrink_200_200/p/3/000/201/0b5/0c1d65b.jpg" alt="foto djonathas cardoso" class="img-circle imgPerfil">
+                                                    <h4>Djonathas Cardoso</h4>
                                                 </li>
                                                 <li>
-                                                    <img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash4/270359_456018917794587_903302850_n.jpg" alt="..." class="img-circle imgPerfil">
+                                                    <img src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-ash4/270359_456018917794587_903302850_n.jpg" alt="foto sérgio barros" class="img-circle imgPerfil">
                                                     <h4>Sérgio Barros</h4>
                                                 </li>
                                             </ul>
@@ -164,11 +164,11 @@
 
                                     <!-- Archives -->
                                     <ul class="style2">
-  
+
                                         <li>
                                             <article class="is-post-summary">
                                                 <h3><a href="#">Apoio</a></h3>
-                                                
+
                                                 <ul class="meta">
                                                     <li class="comments"><a href="http://ulbra-to.br/" target="_blank">CEULP ULBRA</a></li>
                                                 </ul>
