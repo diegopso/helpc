@@ -48,7 +48,7 @@
             <?php if (Auth::isLogged()): ?>
                 <li><a id="acessoLogout" href="~/home/logout">Sair</a></li>
                 <div id="nomeUsuario" class="pull-right">
-                <p>Bem-vindo <?= Session::get('user')->Nome ?></p>
+                <p>Bem-vindo <a><?= Session::get('user')->Nome ?></a></p>
             </div>
             <?php else: ?>
                 <li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>

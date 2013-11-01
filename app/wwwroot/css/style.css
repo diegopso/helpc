@@ -641,5 +641,7 @@ ul.meta li.comments:before
 }
 
 #nomeUsuario {
-    margin-right: 15px;
+    position: fixed;
+    top: 0;
+    left: 30px;
 }
