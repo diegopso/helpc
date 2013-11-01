@@ -47,12 +47,12 @@
             <li><a href="~/home/contato">Contato</a></li>
             <?php if (Auth::isLogged()): ?>
                 <li><a id="acessoLogout" href="~/home/logout">Sair</a></li>
-            <?php else: ?>
-                <li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>
-            <?php endif; ?>
-            <div id="nomeUsuario" class="pull-right">
+                <div id="nomeUsuario" class="pull-right">
                 <p>Bem-vindo <?= Session::get('user')->Nome ?></p>
             </div>
+            <?php else: ?>
+                <li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>
+            <?php endif; ?>            
         </ul>        
     </nav>    
     <!-- /Nav -->
