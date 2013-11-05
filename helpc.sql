@@ -68,6 +68,32 @@ CREATE TABLE IF NOT EXISTS `resposta` (
 
 -- --------------------------------------------------------
 
+INSERT INTO `resposta` (`Id`, `IdResultado`, `IdPergunta`, `Resposta`) VALUES
+(1, 2, 1, 'NÃ£o'),
+(2, 2, 2, 'Sim'),
+(3, 2, 3, 'NÃ£o'),
+(4, 2, 4, 'NÃ£o'),
+(5, 2, 5, 'NÃ£o'),
+(6, 2, 6, 'NÃ£o'),
+(7, 2, 7, 'NÃ£o'),
+(8, 2, 8, 'NÃ£o'),
+(9, 2, 9, 'NÃ£o'),
+(10, 2, 10, 'NÃ£o'),
+(11, 2, 11, 'NÃ£o'),
+(12, 2, 12, 'NÃ£o'),
+(13, 3, 1, 'Sim'),
+(14, 3, 2, 'Sim'),
+(15, 3, 3, 'Sim'),
+(16, 3, 4, 'Sim'),
+(17, 3, 5, 'Sim'),
+(18, 3, 6, 'Não'),
+(19, 3, 7, 'Não'),
+(20, 3, 8, 'Não'),
+(21, 3, 9, 'Sim'),
+(22, 3, 10, 'Não'),
+(23, 3, 11, 'Não'),
+(24, 3, 12, 'Não');
+
 --
 -- Estrutura da tabela `resultado`
 --
@@ -80,6 +106,10 @@ CREATE TABLE IF NOT EXISTS `resultado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
+
+INSERT INTO `resultado` (`Id`, `Solucao`, `Problema`) VALUES
+(2, 'Verifique se o cabo de força do gabinete está conectado.', 'Cabo de força desconectado'),
+(3, 'Tente extrair o pente de memória e passar uma borracha nele.', 'Memória RAM não reconhecida');
 
 --
 -- Estrutura da tabela `usuario`
