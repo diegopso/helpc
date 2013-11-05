@@ -75,12 +75,12 @@ form
 {
 }
 
-form input,
+/*form input,
 form select,
 form textarea
 {
     -webkit-appearance: none;
-}
+}*/
 
 br.clear
 {
