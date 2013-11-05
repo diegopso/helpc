@@ -20,4 +20,10 @@ class Resultado extends Model
 	 * @Column(Type="String")
 	 */
 	public $Problema;
+        
+        public function __construct($problema, $solucao) 
+        {
+            $this->Problema = $problema;
+            $this->Solucao = $solucao;
+        }
 }

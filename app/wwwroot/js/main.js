@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$('#salvar-pergunta').click(function(){
 		doGet('admin/adicionarPergunta?pergunta=' + $('#pergunta').val(), function(data){
-			alert('ola mundo');
 			$('#table-perguntas').append('<tr>' +
 				'<td style="width: 440px">'+ data.d.Texto +'</td>'+
 				'<td>' +

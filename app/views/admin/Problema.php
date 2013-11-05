@@ -6,12 +6,12 @@
                 <h2>Perguntas</h2>
                 <table class="table table-condensed">
                     <table id="table-perguntas" class="table table-condensed">
-                        <?php foreach ($model->Data as $pergunta): ?>
+                        <?php foreach ($model as $pergunta): ?>
                             <tr>
                                 <td style="width: 440px"><?= $pergunta->Texto ?></td>
                                 <td>
-                                    <label class="radio-inline"><input type="radio" name="pergunta_<?= $pergunta->Id ?>" value="1" />Sim</label>
-                                    <label class="radio-inline"><input type="radio" name="resposta_<?= $pergunta->Id ?>" value="0" />Não</label>
+                                    <label class="radio-inline"><input type="radio" name="resposta[<?= $pergunta->Id ?>]" value="1" />Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="resposta[<?= $pergunta->Id ?>]" value="0" />Não</label>
                                     <a href="javascript:void(0);" class="btn-remover">
                                         <span id="pergunta_<?= $pergunta->Id ?>" title="Remover pergunta deste problema" class="glyphicon glyphicon-remove"></span>
                                     </a>

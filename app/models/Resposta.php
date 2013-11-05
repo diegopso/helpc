@@ -25,6 +25,12 @@ class Resposta extends Model
 	 * @Column(Type="String")
 	 */
 	public $Resposta;
+        
+        public function __construct($idPergunta, $idResultado, $resposta) {
+            $this->IdPergunta = (int) $idPergunta;
+            $this->IdResultado = (int) $idResultado;
+            $this->Resposta = $resposta;
+        }
 
 	public static function encontrarTodas($idPergunta)
 	{
