@@ -39,4 +39,10 @@ class Pergunta extends Model {
 
 		return array_shift($pergunta);
 	}
+        
+        public static function findAll()
+        {
+            $db = Database::factory();
+            return $db->Pergunta->all();
+        }
 }

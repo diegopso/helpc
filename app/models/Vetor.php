@@ -25,11 +25,13 @@ class Vetor
 		$count = count($vetor);
 
 		$sum = $sqSumA = $sqSumB = 0;
+                
+                exit(var_dump($vetor->Dimensoes));
 
 		foreach ($this->Dimensoes as $k => $v)
 		{ 
-			$a = $this->str_to_bin($this->Dimensoes[$k]);
-			$b = $this->str_to_bin($vetor->Dimensoes[$k]);
+			$a = (int) $this->Dimensoes[$k];
+			$b = (int) $vetor->Dimensoes[$k];
 
 			$sum += $a * $b;
 			$sqSumA += $a * $a;
@@ -59,28 +61,28 @@ class Vetor
 		}
 	}
 
-	protected function str_to_bin($str, $mode=0) {
-	    $out = false;
-	    for($a=0; $a < strlen($str); $a++) {
-	        $dec = ord(substr($str,$a,1));
-	        $bin = '';
-	        for($i=7; $i>=0; $i--) {
-	            if ( $dec >= pow(2, $i) ) {
-	                $bin .= "1";
-	                $dec -= pow(2, $i);
-	            } else {
-	                $bin .= "0";
-	            }
-	        }
-	        /* Default-mode */
-	        if ( $mode == 0 ) $out .= $bin;
-	        /* Human-mode (easy to read) */
-	        if ( $mode == 1 ) $out .= $bin . " ";
-	        /* Array-mode (easy to use) */
-	        if ( $mode == 2 ) $out[$a] = $bin;
-	    }
-	    return $out;
-	}
+//	protected function str_to_bin($str, $mode=0) {
+//	    $out = false;
+//	    for($a=0; $a < strlen($str); $a++) {
+//	        $dec = ord(substr($str,$a,1));
+//	        $bin = '';
+//	        for($i=7; $i>=0; $i--) {
+//	            if ( $dec >= pow(2, $i) ) {
+//	                $bin .= "1";
+//	                $dec -= pow(2, $i);
+//	            } else {
+//	                $bin .= "0";
+//	            }
+//	        }
+//	        /* Default-mode */
+//	        if ( $mode == 0 ) $out .= $bin;
+//	        /* Human-mode (easy to read) */
+//	        if ( $mode == 1 ) $out .= $bin . " ";
+//	        /* Array-mode (easy to use) */
+//	        if ( $mode == 2 ) $out[$a] = $bin;
+//	    }
+//	    return $out;
+//	}
 
 	public function getKeys()
 	{

@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração: 
--- Versão do Servidor: 5.5.27
--- Versão do PHP: 5.4.7
+-- Tempo de Geração: 05/11/2013 às 21:52
+-- Versão do servidor: 5.6.11
+-- Versão do PHP: 5.5.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,25 +17,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Banco de Dados: `helpc`
+-- Banco de dados: `helpc`
 --
-CREATE DATABASE `helpc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `helpc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `helpc`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pergunta`
+-- Estrutura para tabela `pergunta`
 --
 
 CREATE TABLE IF NOT EXISTS `pergunta` (
   `Texto` varchar(256) CHARACTER SET latin1 DEFAULT NULL,
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
--- Extraindo dados da tabela `pergunta`
+-- Fazendo dump de dados para tabela `pergunta`
 --
 
 INSERT INTO `pergunta` (`Texto`, `Id`) VALUES
@@ -44,7 +44,6 @@ INSERT INTO `pergunta` (`Texto`, `Id`) VALUES
 ('O ventilador da fonte estÃ¡ funcionando? ', 3),
 ('Aparece alguma mensagem de erro na tela?', 4),
 ('O monitor estÃ¡ fazendo sons repetitivos?', 5),
-('Os LEDs piscam?', 6),
 ('HÃ¡ algum cheiro de queimado no monitor?', 7),
 ('O PC estÃ¡ reiniciando sem parar; ou sempre que vocÃª entra ou sai do Windows?', 8),
 ('O PC estÃ¡ se desligando sem parar; ou apÃ³s algum tempo em funcionamento?', 9),
@@ -55,73 +54,95 @@ INSERT INTO `pergunta` (`Texto`, `Id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `resposta`
+-- Estrutura para tabela `resposta`
 --
 
 CREATE TABLE IF NOT EXISTS `resposta` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `IdResultado` int(11) DEFAULT NULL,
   `IdPergunta` int(11) DEFAULT NULL,
   `Resposta` varchar(64) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Fazendo dump de dados para tabela `resposta`
+--
+
+INSERT INTO `resposta` (`Id`, `IdResultado`, `IdPergunta`, `Resposta`) VALUES
+(2, 1, 5, '0'),
+(3, 2, 5, '1'),
+(4, 3, 5, '0'),
+(5, 4, 5, '0'),
+(6, 5, 5, '0'),
+(7, 7, 5, '0'),
+(8, 8, 5, '0'),
+(9, 9, 5, '0'),
+(10, 10, 5, '0'),
+(11, 11, 5, '0'),
+(12, 12, 5, '0');
 
 -- --------------------------------------------------------
 
-INSERT INTO `resposta` (`Id`, `IdResultado`, `IdPergunta`, `Resposta`) VALUES
-(1, 2, 1, 'NÃ£o'),
-(2, 2, 2, 'Sim'),
-(3, 2, 3, 'NÃ£o'),
-(4, 2, 4, 'NÃ£o'),
-(5, 2, 5, 'NÃ£o'),
-(6, 2, 6, 'NÃ£o'),
-(7, 2, 7, 'NÃ£o'),
-(8, 2, 8, 'NÃ£o'),
-(9, 2, 9, 'NÃ£o'),
-(10, 2, 10, 'NÃ£o'),
-(11, 2, 11, 'NÃ£o'),
-(12, 2, 12, 'NÃ£o'),
-(13, 3, 1, 'Sim'),
-(14, 3, 2, 'Sim'),
-(15, 3, 3, 'Sim'),
-(16, 3, 4, 'Sim'),
-(17, 3, 5, 'Sim'),
-(18, 3, 6, 'Não'),
-(19, 3, 7, 'Não'),
-(20, 3, 8, 'Não'),
-(21, 3, 9, 'Sim'),
-(22, 3, 10, 'Não'),
-(23, 3, 11, 'Não'),
-(24, 3, 12, 'Não');
-
 --
--- Estrutura da tabela `resultado`
+-- Estrutura para tabela `resultado`
 --
 
 CREATE TABLE IF NOT EXISTS `resultado` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Solucao` varchar(1024) CHARACTER SET latin1 DEFAULT NULL,
   `Problema` varchar(256) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Fazendo dump de dados para tabela `resultado`
+--
+
+INSERT INTO `resultado` (`Id`, `Solucao`, `Problema`) VALUES
+(5, 'Verifique se seu cabo de forÃ§a estÃ¡ conectado.', 'Cabo de forÃ§a desconectado.');
 
 -- --------------------------------------------------------
 
-INSERT INTO `resultado` (`Id`, `Solucao`, `Problema`) VALUES
-(2, 'Verifique se o cabo de força do gabinete está conectado.', 'Cabo de força desconectado'),
-(3, 'Tente extrair o pente de memória e passar uma borracha nele.', 'Memória RAM não reconhecida');
-
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Login` varchar(32) CHARACTER SET latin1 DEFAULT NULL,
   `Senha` varchar(32) CHARACTER SET latin1 DEFAULT NULL,
   `Nome` varchar(64) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Fazendo dump de dados para tabela `usuario`
+--
+
+INSERT INTO `usuario` (`Id`, `Login`, `Senha`, `Nome`) VALUES
+(1, 'djonathas', '123', 'Djonathas Cardoso');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `view_resultados`
+--
+CREATE TABLE IF NOT EXISTS `view_resultados` (
+`Id` int(11)
+,`Solucao` varchar(1024)
+,`Problema` varchar(256)
+,`IdsRespostas` text
+,`Respostas` text
+,`IdsPerguntas` text
+,`Perguntas` text
+);
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `view_resultados`
+--
+DROP TABLE IF EXISTS `view_resultados`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_resultados` AS select `rd`.`Id` AS `Id`,`rd`.`Solucao` AS `Solucao`,`rd`.`Problema` AS `Problema`,group_concat(`r`.`Id` separator '-$-') AS `IdsRespostas`,group_concat(`r`.`Resposta` separator '-$-') AS `Respostas`,group_concat(`p`.`Id` separator '-$-') AS `IdsPerguntas`,group_concat(`p`.`Texto` separator '-$-') AS `Perguntas` from ((`pergunta` `p` join `resposta` `r` on((`p`.`Id` = `r`.`IdPergunta`))) join `resultado` `rd` on((`rd`.`Id` = `r`.`IdResultado`))) group by `rd`.`Id`;
 

@@ -46,12 +46,29 @@ class AdminController extends Controller {
         $pergunta = new Pergunta();
         $pergunta->Texto = Request::get('pergunta');
         $pergunta->save();
+        
+        $pergunta->Texto = htmlentities(Request::get('pergunta'));
 
         return $this->_json($pergunta);
     }
 
     public function problema() {
-        return $this->_view(Pergunta::all());
+        
+        if(Request::isPost())
+        {
+            $result = new Resultado(Request::post('problema'), Request::post('solucao'));
+            $result->save();
+            
+            foreach (Request::post('resposta') as $key => $value) 
+            {
+                $resposta = new Resposta($result->Id, $key, $value);
+                $resposta->save();
+            }
+            
+            $this->_flash('alert-success', 'Solução adicionada com sucesso.');
+            return $this->_redirect('~/');
+        }
+        return $this->_view(Pergunta::findAll());
     }
 
 }
