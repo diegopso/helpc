@@ -21,12 +21,12 @@
     <script src="~/js/main.js"></script>
     <script type="text/javascript">
         var ROOT = '<?= ROOT_VIRTUAL ?>';
-        function ocultarLogin(){
+        function ocultarLogin() {
             $('#acessoLogin').show();
         }
-        function ocultarLogin(){
-            $('#acessoLogin').show();
-        }
+//        function ocultarLogin(){
+//            $('#acessoLogin').show();
+//        }
     </script>
 </head>
 <body class="homepage">
@@ -36,7 +36,7 @@
             <div>
                 <h1><a href="#" id="logo">HELPC</a></h1>
                 <span class="byline">- DIAGNÓSTICO INTELIGENTE</span>
-            </div>
+            </div>            
         </div>
     </header>
     <!-- Nav -->
@@ -45,15 +45,16 @@
             <li class="current_page_item"><a href="~/home">Home</a></li>
             <li><a href="~/home/sobre">Sobre</a></li>
             <li><a href="~/home/contato">Contato</a></li>
-            <?php
-            if (Auth::isLogged()) {
-                echo '<li><a id="acessoLogout" href="#">Sair</a></li>';
-            } else {
-                echo '<li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>';
-            }
-            ?>
-        </ul>
-    </nav>
+            <?php if (Auth::isLogged()): ?>
+                <li><a id="acessoLogout" href="~/home/logout">Sair</a></li>
+                <div id="nomeUsuario" class="pull-right">
+                <p>Bem-vindo <a><?= Session::get('user')->Nome ?></a></p>
+            </div>
+            <?php else: ?>
+                <li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>
+            <?php endif; ?>            
+        </ul>        
+    </nav>    
     <!-- /Nav -->
     <!-- /Header -->
 
