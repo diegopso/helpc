@@ -26,4 +26,10 @@ class Resultado extends Model
         $this->Problema = $problema;
         $this->Solucao = $solucao;
     }
+    
+    public static function findAll()
+        {
+            $db = Database::factory();
+            return $db->Problema->all();
+        }
 }

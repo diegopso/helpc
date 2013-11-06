@@ -45,13 +45,13 @@
             <li class="current_page_item"><a href="~/home">Home</a></li>
             <li><a href="~/home/sobre">Sobre</a></li>
             <li><a href="~/home/contato">Contato</a></li>
+            <li id="acessoLogin"><a href="~/admin">Acesso Restrito</a></li>
             <?php if (Auth::isLogged()): ?>
-                <li><a id="acessoLogout" href="~/home/logout">Sair</a></li>
                 <div id="nomeUsuario" class="pull-right">
-                <p>Bem-vindo <a><?= Session::get('user')->Nome ?></a></p>
-            </div>
+                    <p>Bem-vindo <a><?= Session::get('user')->Nome ?></a> (<a id="acessoLogout" href="~/home/logout">Sair</a>)</p>
+                </div>
             <?php else: ?>
-                <li id="acessoLogin"><a href="~/home/login">Acesso Restrito</a></li>
+
             <?php endif; ?>            
         </ul>        
     </nav>    

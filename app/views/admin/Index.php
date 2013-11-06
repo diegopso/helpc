@@ -3,19 +3,15 @@
     <form role="form" method="post">
         <div class="row ajusteTop">
             <div class="col-md-7">
-                <h2>Perguntas</h2>
+                <h2>Resultados</h2>
                 <table class="table table-condensed">
                     <table id="table-perguntas" class="table table-condensed">
-                        <?php foreach ($model as $problema): ?>
+                        <?php foreach ($model as $resultado): ?>
                             <tr>
-                                <td style="width: 440px"><?= $pergunta->Texto ?></td>
-                                <td>
-                                    <label class="radio-inline"><input type="radio" name="resposta[<?= $problema->Id ?>]" value="1" />Sim</label>
-                                    <label class="radio-inline"><input type="radio" name="resposta[<?= $problema->Id ?>]" value="0" />Não</label>
-                                    <a href="javascript:void(0);" class="btn-remover">
-                                        <span id="pergunta_<?= $problema->Id ?>" title="Remover pergunta deste problema" class="glyphicon glyphicon-remove"></span>
-                                    </a>
-                                </td>
+                                <td><?= $pergunta->Problema ?></td>
+                                <td><?= $pergunta->Solucao ?></td>
+                                <td>Editar</td>
+                                <td>Excluir</td>
                             </tr>
                         <?php endforeach; ?>
                     </table>

@@ -47,7 +47,7 @@ Config::set('default_action', 'index');
 /**
  * Página de login
  */
-Config::set('default_login', '~/home');
+Config::set('default_login', '~/home/login');
 
 /**
  * Charset padrão

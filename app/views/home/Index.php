@@ -4,7 +4,7 @@
         <h2>Está cansado de perder tempo aguardando o diagnóstico do seu PC?</h2>
         <h2>que tal experimentar o HelpC!</h2>
         <span class="byline">Antes de começar, deseja conhecer a ferramenta? caso queira <a href="#">'Clique Aqui'</a></span>
-        <a href="#" class="button">Iniciar diagnóstico</a>
+        <a href="~/help" class="button">Iniciar diagnóstico</a>
     </section>
 </div>
 <!-- /Banner -->
