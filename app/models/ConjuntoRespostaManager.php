@@ -47,6 +47,9 @@ class ConjuntoRespostaManager
 
 	public function getProvavel()
 	{
+		if(count($this->Resultados) === 1)
+			return reset($this->Resultados);
+
 		foreach ($this->Resultados as $r) 
 		{
 			if($r->similaridade($this->Log) > 0.5)

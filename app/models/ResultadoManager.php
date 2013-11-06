@@ -46,6 +46,9 @@ class ResultadoManager
 
 	public function verificarResposta($idPergunta, $resposta)
 	{
+		if($resposta == -1)
+			return true;
+
 		foreach ($this->Perguntas as $k => $v) 
 		{
 			if($v->IdPergunta == $idPergunta)

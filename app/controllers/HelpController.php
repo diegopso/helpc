@@ -30,8 +30,10 @@ class HelpController extends Controller
 		Session::set('provavel', $provavel);
 		Session::set('ultima_pergunta', $pergunta);
 
-		if(!$pergunta)
+		if(!$pergunta || !count($set->Resultados))
 			return $this->_redirect('~/help/desculpe');
+
+		//echo '<h1 style="position: fixed; bottom: 0; left: 0;">', var_dump(count($set->Resultados)), '</h1>'; //acompanhamento...
 
 		$this->_set('provavel', $provavel);
 		return $this->_view($pergunta);
