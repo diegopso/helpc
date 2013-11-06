@@ -13,17 +13,17 @@
                     </h3>
                     <div class="well col col-md-4">
                         <span class="input-group-addon">
-                            <label><input type="radio" name="resposta" value="Sim"> SIM</label>
+                            <label><input type="radio" name="resposta" value="1"> SIM</label>
                         </span>
                     </div>
                     <div class="well col col-md-4">
                         <span class="input-group-addon">
-                            <label><input type="radio" name="resposta" value=""> NÃO SEI</label>
+                            <label><input type="radio" name="resposta" value="-1"> NÃO SEI</label>
                         </span>
                     </div>
                     <div class="well col col-md-4">
                         <span class="input-group-addon">
-                            <label><input type="radio" name="resposta" value="Não"> NÃO</label>
+                            <label><input type="radio" name="resposta" value="0"> NÃO</label>
                         </span>
                     </div>
                     <button id="btConfirmar" type="submit" class="btn btn-large btn-info">

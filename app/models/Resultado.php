@@ -21,9 +21,9 @@ class Resultado extends Model
 	 */
 	public $Problema;
         
-        public function __construct($problema, $solucao) 
-        {
-            $this->Problema = $problema;
-            $this->Solucao = $solucao;
-        }
+    public function __construct($problema, $solucao) 
+    {
+        $this->Problema = $problema;
+        $this->Solucao = $solucao;
+    }
 }

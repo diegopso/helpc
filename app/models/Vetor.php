@@ -25,8 +25,6 @@ class Vetor
 		$count = count($vetor);
 
 		$sum = $sqSumA = $sqSumB = 0;
-                
-                exit(var_dump($vetor->Dimensoes));
 
 		foreach ($this->Dimensoes as $k => $v)
 		{ 

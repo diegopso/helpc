@@ -26,11 +26,12 @@ class Resposta extends Model
 	 */
 	public $Resposta;
         
-        public function __construct($idPergunta, $idResultado, $resposta) {
-            $this->IdPergunta = (int) $idPergunta;
-            $this->IdResultado = (int) $idResultado;
-            $this->Resposta = $resposta;
-        }
+    public function __construct($idResultado, $idPergunta, $resposta) 
+    {
+        $this->IdPergunta = (int) $idPergunta;
+        $this->IdResultado = (int) $idResultado;
+        $this->Resposta = $resposta;
+    }
 
 	public static function encontrarTodas($idPergunta)
 	{
