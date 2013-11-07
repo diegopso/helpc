@@ -8,7 +8,7 @@ class AdminController extends Controller {
     }
 
     public function index() {
-        return $this->_view(Pergunta::findAll());
+        return $this->_view(Resultado::findAll());
     }
 
     public function perguntas($i = 0) {
