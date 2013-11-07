@@ -21,7 +21,7 @@ class Resultado extends Model
 	 */
 	public $Problema;
         
-    public function __construct($problema, $solucao) 
+    public function __construct($problema = null, $solucao = null) 
     {
         $this->Problema = $problema;
         $this->Solucao = $solucao;
@@ -30,6 +30,6 @@ class Resultado extends Model
     public static function findAll()
         {
             $db = Database::factory();
-            return $db->Problema->all();
+            return $db->Resultado->all();
         }
 }
