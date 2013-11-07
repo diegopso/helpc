@@ -49,7 +49,7 @@ class HelpController extends Controller
 		Session::del('conjunto_resposta');
 		Session::del('provavel');
 		Session::del('ultima_pergunta');
-		$this->_flash('alert alert-success', 'Parabéns o/');
+		$this->_flash('alert alert-success', '<h3 id="msgSucesso">Processo realizado com sucesso!</h3>');
 		return $this->_redirect('~/');
 	}
 }

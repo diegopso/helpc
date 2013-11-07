@@ -122,6 +122,11 @@ a.acessoLogout{
     height: 355px;
 }
 
+#msgSucesso{
+    margin: 0;
+    text-align: center;
+}
+
 .btAux{
     font-size: 20pt;
     padding: 3px 7px 0px 7px;    
