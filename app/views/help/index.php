@@ -1,44 +1,47 @@
-<div class="row areaMediana">
-    <div class="container">    
-        <div class="col col-md-12" align="center">
-            <form class="col col-md-6" method="POST">
-            	<h2>Responda as perguntas</h2>
-                <h4>Dessa forma poderemos lhe ajudar</h4>
-                <button id="btIniciar" title="Teste" type="button" class="btn btn-large btn-success" onclick="exibirPop('areaDiag')" style="display: none;">
-                    <span class="glyphicon glyphicon-play-circle"></span> Iniciar</button>
-                <!--Respostas-->    
-                <div id="areaDiag" class="well" style="display: inline-block;">
-                    <h3 style="color: #39B3D7;">
-                        <b><?= $model->Texto ?></b>
-                    </h3>
-                    <div class="well col col-md-4">
-                        <span class="input-group-addon">
-                            <label><input type="radio" name="resposta" value="1"> SIM</label>
-                        </span>
+<div id="main" class="areaMediana">
+    <section class="is-highlight container">    
+        <!--Respostas-->    
+        <div id="areaDiag">
+            <h2>Responda as perguntas</h2>
+            <h4>Dessa forma poderemos lhe ajudar</h4>
+            <button id="btIniciar" title="Teste" type="button" class="btn btn-large btn-success" onclick="exibirPop('areaDiag')" style="display: none;">
+                <span class="glyphicon glyphicon-play-circle"></span> Iniciar</button>
+
+            <div class="well" style="display: inline-block;">
+                <h2 style="color: #D73952;">
+                    <b><?= $model->Texto ?></b>
+                </h2>
+                <form class="formPerguntas" method="POST">
+                    <div class="well 4u">
+                        <span class="textResponda input-group-addon">
+                            <input type="radio" name="resposta" value="1"> SIM</span>
                     </div>
-                    <div class="well col col-md-4">
-                        <span class="input-group-addon">
-                            <label><input type="radio" name="resposta" value="-1"> NÃO SEI</label>
-                        </span>
+                    <div class="well 4u">
+                        <span class="textResponda input-group-addon">
+                            <input type="radio" name="resposta" value="-1"> NÃO SEI</span>
                     </div>
-                    <div class="well col col-md-4">
-                        <span class="input-group-addon">
-                            <label><input type="radio" name="resposta" value="0"> NÃO</label>
-                        </span>
+                    <div class="well 4u">
+                        <span class="textResponda input-group-addon">
+                            <input type="radio" name="resposta" value="0"> NÃO</span>
                     </div>
-                    <button id="btConfirmar" type="submit" class="btn btn-large btn-info">
+                    <button id="btConfirmar" type="submit" class="button">
                         <span class="glyphicon glyphicon-ok-sign"></span> Confirmar</button>
-                </div>
-            </form>
-            <?php if($provavel): ?>
-            <div id="areaView" class="well col col-md-6">
-                <h3><?= $provavel->Problema ?></h3>
-				<p><?= $provavel->Solucao ?></p>
-				<p>Isso resolveu seu problema?</p>
-            	<a href="~/help/sucesso">Sim</a> &nbsp;&nbsp;&nbsp;
-            	<a href="javascript:void(0);">Não</a>
+                </form>
             </div>
-			<?php endif; ?>
         </div>
-    </div>
+    </section>
+    <section id="ocultarPerguntas" class="is-highlight container">
+        <?php if ($provavel): ?>
+            <div id="areaView" class="well is-highlight">
+                <h3>Problema:</h3>
+                <h2><?= $provavel->Problema ?></h2>
+                <h3>Possível Solução:</h3>
+                <h2><?= $provavel->Solucao ?></h2>
+                <h3>Isso resolveu seu problema?</h3>
+                <a class="button" href="~/help/sucesso">Sim</a> &nbsp;&nbsp;&nbsp;
+                <a class="button" href="javascript:void(0);">Não</a>
+            </div>
+        <?php endif; ?>
+    </section>
+
 </div>

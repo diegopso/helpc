@@ -67,7 +67,7 @@
             <div class="12u">
                 <!-- About -->
                 <section>
-                    <h2 class="major"><span>Desenvolvimento do Projeto?</span></h2>
+                    <h2 class="major"><span>.: HELPC :.</span></h2>
                     <p>
                         Este projeto foi desenvolvido em carácter acadêmico, no Centro Universitário 
                         Luterano de Palmas, na disciplina de IA (Inteligência Aatificial)<br> ministrada pelo

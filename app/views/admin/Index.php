@@ -1,22 +1,26 @@
 <!--Usuario-->
 <div class="container">
     <form role="form" method="post">
-        <div class="row ajusteTop">
-            <div class="col-md-7">
-                <h2>Resultados</h2>
-                <table class="table table-condensed">
-                    <table id="table-perguntas" class="table table-condensed">
-                        <?php foreach ($model as $resultado): ?>
-                            <tr>
-                                <td><?= $resultado->Problema ?></td>
-                                <td><?= $resultado->Solucao ?></td>
-                                <td>Editar</td>
-                                <td>Excluir</td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </table>
+        <div class="ajusteTop">
+            <section>
+                <h2 class="major"><span>Area Restrita de: 
+                    <?php if (Auth::isLogged()): ?>
+                        <?= Session::get('user')->Nome ?>
+                    <?php endif; ?></span>
+                </h2>
+                <hr />
+                <table id="table-perguntas" class="table table-condensed">
+                    <?php foreach ($model as $resultado): ?>
+                        <tr>
+                            <td><?= $resultado->Problema ?></td>
+                            <td><?= $resultado->Solucao ?></td>
+                            <td><a href=""><span class="glyphicon glyphicon-pencil"> </span>Editar</a></td>
+                            <td><a href=""><span class="glyphicon glyphicon-remove"> </span>Excluir</a></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
-            </div>
+            </section>
         </div>
+
     </form>
 </div>

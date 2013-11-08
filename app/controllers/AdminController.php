@@ -65,7 +65,7 @@ class AdminController extends Controller {
                 $resposta->save();
             }
             
-            $this->_flash('alert-success', 'Solução adicionada com sucesso.');
+            $this->_flash('alert alert-success', '<h3 id="msgSucesso">Solução adicionada com sucesso</h3>');
             return $this->_redirect('~/');
         }
         return $this->_view(Pergunta::findAll());
