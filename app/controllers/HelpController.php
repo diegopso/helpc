@@ -7,11 +7,11 @@ class HelpController extends Controller
 		Session::start();
 
 		$set = ConjuntoRespostaManager::converter(Session::get('conjunto_resposta'));
-		if(!$set)
-			$set = new ConjuntoRespostaManager();
-
 		$pergunta = Session::get('ultima_pergunta');
 		$provavel = Session::get('provavel');
+
+		if(!$set)
+			$set = new ConjuntoRespostaManager();
 
 		if(Request::isPost())
 		{

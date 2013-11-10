@@ -30,7 +30,7 @@
             </div>
         </div>
     </section>
-    <section id="ocultarPerguntas" class="is-highlight container">
+    <section class="is-highlight container">
         <?php if ($provavel): ?>
             <div id="areaView" class="well is-highlight">
                 <h3>Problema:</h3>
