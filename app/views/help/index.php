@@ -39,7 +39,7 @@
                 <h2><?= $provavel->Solucao ?></h2>
                 <h3>Isso resolveu seu problema?</h3>
                 <a class="button" href="~/help/sucesso">Sim</a> &nbsp;&nbsp;&nbsp;
-                <a class="button" href="javascript:void(0);">Não</a>
+                <a id="naumBtn" class="button" href="javascript:void(0);">Não</a>
             </div>
         <?php endif; ?>
     </section>

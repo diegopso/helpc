@@ -11,6 +11,18 @@ $(document).ready(function(){
 			'</tr>');
 		}, function(err){alert(err.responseText);}, function(){}, function(){});
 	});
+
+    var areaView = $('#areaView');
+    var hasAreaView = areaView.length;
+    if(hasAreaView)
+    {
+        var areaDiag = $('#areaDiag').hide();
+        areaView.show();
+        $('#naumBtn').click(function(){
+            areaDiag.show('fast');
+            areaView.hide('fast');
+        });
+    }
 });
 
 function doGet(path, success, error, before) {
