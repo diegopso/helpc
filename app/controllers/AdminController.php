@@ -46,28 +46,37 @@ class AdminController extends Controller {
         $pergunta = new Pergunta();
         $pergunta->Texto = Request::get('pergunta');
         $pergunta->save();
-        
+
         $pergunta->Texto = htmlentities(Request::get('pergunta'));
 
         return $this->_json($pergunta);
     }
 
-    public function problema() {
-        
-        if(Request::isPost())
-        {
-            $result = new Resultado(Request::post('problema'), Request::post('solucao'));
+    public function problema($idResultado = null) {
+        if (Request::isPost()) {
+            $idResultado = Request::post('idResultado');
+            if ($idResultado) {
+                $result = Resultado::get($idResultado);
+                $result->Problema = Request::post('problema');
+                $result->Solucao = Request::post('solucao');
+            } else {
+                $result = new Resultado(Request::post('problema'), Request::post('solucao'));
+            }
             $result->save();
-            
-            foreach (Request::post('resposta') as $key => $value) 
-            {
+
+            foreach (Request::post('resposta') as $key => $value) {
                 $resposta = new Resposta($result->Id, $key, $value);
                 $resposta->save();
             }
-            
+
             $this->_flash('alert alert-success', '<h3 id="msgSucesso">Solução adicionada com sucesso</h3>');
             return $this->_redirect('~/');
         }
+        if ($idResultado) {
+            $result = Resultado::get($idResultado);
+            $this->_set('resultado', $result);
+        }
+        $this->_set('idResultado', $idResultado);        
         return $this->_view(Pergunta::findAll());
     }
 

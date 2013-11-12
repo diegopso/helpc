@@ -92,6 +92,10 @@ p, ul, ol, dl, table
     margin-bottom: 3em;
 }
 
+th {
+    font-weight: bold;
+}
+
 section,
 article
 {

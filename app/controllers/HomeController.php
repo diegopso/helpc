@@ -16,14 +16,14 @@ class HomeController extends Controller {
 
     public function login() {
         if (Auth::isLogged()) {
-            $this->_redirect('~/admin/problema');
+            $this->_redirect('~/admin/');
         }
         if (is_post) {
             $user = Usuario::login($_POST['login'], $_POST['password']);
             if ($user) {
                 Auth::set('admin');
                 Session::set('user', $user);
-                $this->_redirect('~/admin/problema');
+                $this->_redirect('~/admin/');
             } else
                 $this->_flash('error', 'Login ou senha incorretos!');
         }
