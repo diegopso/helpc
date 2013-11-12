@@ -3,7 +3,7 @@
     <section id="banner">
         <h2>Está cansado de perder tempo aguardando o diagnóstico do seu PC?</h2>
         <h2>que tal experimentar o HelpC!</h2>
-        <span class="byline">Antes de começar, deseja conhecer a ferramenta? caso queira <a href="#">'Clique Aqui'</a></span>
+        <span class="byline">Antes de começar, deseja conhecer a ferramenta? caso queira <a href="~/Home/Sobre">'Clique Aqui'</a></span>
         <a href="~/help" class="button">Iniciar diagnóstico</a>
     </section>
 </div>
@@ -33,7 +33,7 @@
                         , e você responde sobre o estado do seu computador. Simples né?
                     </p>
                     <div class="actions">
-                        <a href="#" class="button button-big">Saiba Mais</a>
+                        <a href="~/Home/Sobre" class="button button-big">Saiba Mais</a>
                     </div>
                 </section>
                 <!-- /Highlight -->
@@ -56,8 +56,7 @@
                                     <a href="#" class="image image-full"><img src="images/pic01.jpg" alt="" /></a>
                                     <h3><a href="#">Software</a></h3>
                                     <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                        O HelpC dá suporte a problemas relacionados a softwares de computadores.
                                     </p>
                                 </section>
                                 <!-- /Feature -->
@@ -70,8 +69,7 @@
                                     <a href="#" class="image image-full"><img src="images/pic02.jpg" alt="" /></a>
                                     <h3><a href="#">Hardware</a></h3>
                                     <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                        Problemas relacionados ao Hardware de computadores, O HelpC também fornece suporte.
                                     </p>
                                 </section>
                                 <!-- /Feature -->
@@ -84,8 +82,7 @@
                                     <a href="#" class="image image-full"><img src="images/pic03.jpg" alt="" /></a>
                                     <h3><a href="#">Periféricos</a></h3>
                                     <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                        O HelpC auxilia em problemas relacionados ao periféricos de computadores.
                                     </p>
                                 </section>
                                 <!-- /Feature -->
@@ -98,8 +95,9 @@
                                     <a href="#" class="image image-full"><img src="images/pic04.jpg" alt="" /></a>
                                     <h3><a href="http://getlamp.com">Suporte</a></h3>
                                     <p>
-                                        Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in 
-                                        lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                        O HelpC possibilita que seus usuários entre em contato
+                                        com a esquipe do HelpC, para auxiliar em problemas relacionados
+                                        a aplicação.
                                     </p>
                                 </section>
                                 <!-- /Feature -->
@@ -147,13 +145,6 @@
                                                 </li>
                                             </ul>
                                         </section>
-                                        <p>
-                                            Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent 
-                                            semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a 
-                                            dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum 
-                                            dolor sit non aliquet sed, tempor et dolor.  Praesent a dapibus velit. Curabitur 
-                                            accumsan.
-                                        </p>
                                     </article>
                                     <!-- /Featured Post -->
 
